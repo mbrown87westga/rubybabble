@@ -1,5 +1,4 @@
 class TileBag
-  attr_accessor :bag
   POINTS_LOOKUP = {
     :E => 1, :A => 1, :I => 1, :O => 1, :N => 1, :R => 1, :T => 1, :L => 1, :S => 1, :U => 1, 
     :D => 2, :G => 2, :B => 3, :C => 3, :M => 3, :P => 3, :F => 4, :H => 4, :V => 4, :W => 4, 
