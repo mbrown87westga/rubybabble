@@ -1,11 +1,7 @@
 require "minitest/autorun"
 require_relative "../../tile_bag.rb"
 
-class TileBag::TestPointsFor  < Minitest::Test
-  def setup
-    @tile_bag = TileBag.new
-  end
-
+class TileBag::TestPointsFor < Minitest::Test
   def do_point_test letter, score
     assert_equal score, TileBag::points_for(letter)
   end
@@ -18,7 +14,5 @@ class TileBag::TestPointsFor  < Minitest::Test
     assert_equal 5, TileBag::points_for(:K)
     [:J, :X].each { |l| do_point_test l, 8 }
     [:Q, :Z].each { |l| do_point_test l, 10 }
-
-
   end
 end

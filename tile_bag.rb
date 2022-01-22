@@ -6,7 +6,7 @@ class TileBag
     :Y => 4, :K => 5, :J => 8, :X => 8, :Q => 10, :Z => 10
   }
 
-  def initalize tiles
+  def initialize
     @bag = [
       :E, :E, :E, :E, :E, :E, :E, :E, :E, :E, :E, :E, :A, :A, :A, :A, :A, :A, :A, :A,
       :A, :I, :I, :I, :I, :I, :I, :I, :I, :I, :O, :O, :O, :O, :O, :O, :O, :O, :N, :N,
