@@ -7,6 +7,6 @@ class Word::TestInitialize < Minitest::Test
   end
 
   def test_create_empty_word
-    assert_equal(0, @word.score)
+    assert_equal(0, @word.tiles.length)
   end
 end
