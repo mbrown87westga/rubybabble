@@ -1,4 +1,5 @@
 require_relative "tile_group.rb"
+require_relative "word.rb"
 
 class TileRack < TileGroup
   def number_of_tiles_needed
