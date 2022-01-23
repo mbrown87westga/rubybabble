@@ -15,12 +15,12 @@ class Babble
 
     should_exit = false
     total_score = 0
-    until should_exit
-      replenish_rack
+    replenish_rack
 
+    until should_exit
       puts "Your rack contains: #{@rack.hand}"
       puts "Guess a word"
-      guess = gets.chomp.upcase
+      guess = gets.chomp.upcase #I am lazy, and don't want to have to type them all in upper case. If that is a problem, the upcase here can be removed easily.
       if guess == ":QUIT"
         should_exit = true
       else
@@ -34,6 +34,13 @@ class Babble
               score = word.score
               total_score += score
               puts "You made #{guess} for #{score} points"
+              puts
+
+              replenish_rack
+              if @bag.empty?
+                puts "The bag is empty. Game over."
+                should_exit = true
+              end
             end
         end
 
@@ -45,7 +52,12 @@ class Babble
   end
 
   def replenish_rack
-    @rack.number_of_tiles_needed.times { @rack.append(@bag.draw_tile) }
+    @rack.number_of_tiles_needed.times do
+      unless (@bag.empty?)
+        tile = @bag.draw_tile
+        @rack.append(tile)
+      end
+    end
   end
 end
 
